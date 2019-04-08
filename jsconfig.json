@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "checkJs": true,
+    "module": "esNext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "resolveJsonModule": true,
+    "target": "es5"
+  },
+  "exclude": ["node_modules", "dist"]
+}
