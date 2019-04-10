@@ -1,0 +1,78 @@
+@import "./import";
+
+html {
+  @include breakpoint(tablet) {
+    font-size: 112.5%;
+  }
+
+  @include breakpoint(laptop) {
+    font-size: 125%;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: 135%;
+  }
+
+  @include breakpoint(tv) {
+    font-size: 140%;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-body;
+  background-color: $primary;
+  color: $on-primary;
+
+  * {
+    box-sizing: inherit;
+  }
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  appearance: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  margin: 0.5em 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $size-xl;
+}
+
+h2 {
+  font-size: $size-l;
+}
+
+h3 {
+  font-size: $size-m;
+}
+
+h4,
+h5,
+h6 {
+  font-size: $size-s;
+}

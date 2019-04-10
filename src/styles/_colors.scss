@@ -1,0 +1,11 @@
+@function color($colorName) {
+  @return var(--#{$colorName});
+}
+
+@function color-rgb($colorName) {
+  @return var(--#{$colorName}-rgb);
+}
+
+@function color-rgba($colorName, $alpha) {
+  @return rgba(color-rgb($colorName), $alpha);
+}

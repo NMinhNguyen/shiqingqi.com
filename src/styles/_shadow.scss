@@ -1,0 +1,6 @@
+@mixin shadow($color-name, $size) {
+  box-shadow: 0 calc(#{$size} * 0.2rem) calc(#{$size} * 0.5rem)
+      calc((#{$size} - 1) * 0.1rem) color-rgba($color-name, 0.4),
+    0 calc(#{$size} * 0.2rem) calc(#{$size} * 0.8rem) 0
+      color-rgba($color-name, 0.2);
+}
