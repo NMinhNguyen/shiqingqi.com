@@ -9,3 +9,57 @@
 @function color-rgba($colorName, $alpha) {
   @return rgba(color-rgb($colorName), $alpha);
 }
+
+$black: color(black);
+$white: color(white);
+$grey: color(grey);
+$blueGrey: color(blue-grey);
+$purple: color(purple);
+$red: color(red);
+$yellow: color(yellow);
+$lightGrey: color(light-grey);
+$lightBlueGrey: color(light-blue-grey);
+$lightPurple: color(light-purple);
+$lightRed: color(light-red);
+$lightYellow: color(light-yellow);
+$darkGrey: color(dark-grey);
+$darkBlueGrey: color(dark-blue-grey);
+$darkPurple: color(dark-purple);
+$darkRed: color(dark-red);
+$darkYellow: color(dark-yellow);
+
+$black-rgb: color-rgb(black);
+$white-rgb: color-rgb(white);
+$grey-rgb: color-rgb(grey);
+$blueGrey-rgb: color-rgb(blue-grey);
+$purple-rgb: color-rgb(purple);
+$red-rgb: color-rgb(red);
+$yellow-rgb: color-rgb(yellow);
+$lightGrey-rgb: color-rgb(light-grey);
+$lightBlueGrey-rgb: color-rgb(light-blue-grey);
+$lightPurple-rgb: color-rgb(light-purple);
+$lightRed-rgb: color-rgb(light-red);
+$lightYellow-rgb: color-rgb(light-yellow);
+$darkGrey-rgb: color-rgb(dark-grey);
+$darkBlueGrey-rgb: color-rgb(dark-blue-grey);
+$darkPurple-rgb: color-rgb(dark-purple);
+$darkRed-rgb: color-rgb(dark-red);
+$darkYellow-rgb: color-rgb(dark-yellow);
+
+$primary: color(primary);
+$on-primary: color(on-primary);
+$secondary: color(secondary);
+$on-seconday: color(on-secondary);
+$accent: color(accent);
+$on-accent: color(on-accent);
+$error: color(error);
+$on-error: color(on-error);
+
+$primary-rgb: color-rgb(primary);
+$on-primary-rgb: color-rgb(on-primary);
+$secondary-rgb: color-rgb(secondary);
+$on-seconday-rgb: color-rgb(on-secondary);
+$accent-rgb: color-rgb(accent);
+$on-accent-rgb: color-rgb(on-accent);
+$error-rgb: color-rgb(error);
+$on-error-rgb: color-rgb(on-error);

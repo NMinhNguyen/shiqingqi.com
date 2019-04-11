@@ -10,5 +10,14 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/src/$1"
   },
   snapshotSerializers: ["jest-serializer-vue"],
-  testMatch: ["<rootDir>/tests/unit/**/*.spec.(ts|tsx|js)"]
+  testMatch: ["<rootDir>/tests/unit/**/*.spec.(ts|tsx|js)"],
+  collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      branches: 99,
+      functions: 99,
+      lines: 99,
+      statements: 99
+    }
+  }
 };
