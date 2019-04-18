@@ -19,5 +19,14 @@ module.exports = {
       lines: 99,
       statements: 99
     }
-  }
+  },
+  reporters: [
+    "default",
+    [
+      "./node_modules/jest-html-reporter",
+      {
+        pageTitle: "Test Report"
+      }
+    ]
+  ]
 };

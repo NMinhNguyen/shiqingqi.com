@@ -18,18 +18,12 @@ const stubStore = {
   }
 };
 
-const oldSetProperty = document.body.style.setProperty;
-
 describe("ThemeProvider.vue", () => {
   /** @type {jest.Mock<any, any>} */
   let setProperty;
 
   beforeEach(() => {
     document.body.style.setProperty = setProperty = jest.fn();
-  });
-
-  afterEach(() => {
-    document.body.style.setProperty = oldSetProperty;
   });
 
   it("renders empty fragment", () => {

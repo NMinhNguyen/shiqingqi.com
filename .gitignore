@@ -21,3 +21,6 @@ yarn-error.log*
 *.sw*
 
 coverage
+test-report.html
+
+src/old_components
