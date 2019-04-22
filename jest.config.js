@@ -28,5 +28,6 @@ module.exports = {
         pageTitle: "Test Report"
       }
     ]
-  ]
+  ],
+  testEnvironment: "jest-environment-jsdom-fourteen"
 };
