@@ -1,6 +1,8 @@
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, config } from "@vue/test-utils";
 import FlowingGradient from "@/components/FlowingGradient.vue";
 import * as canvas from "@/utils/canvas";
+
+config.mocks["$vars"] = FlowingGradient.vars();
 
 jest.mock("@/utils/canvas", () => ({
   __esModule: true,
@@ -15,7 +17,6 @@ jest.mock("@/utils/canvas", () => ({
 }));
 
 describe("FlowingGradient.vue", () => {
-  /** @type {import('@vue/test-utils').Wrapper<FlowingGradient>} */
   let wrapper;
 
   describe("mounted", () => {

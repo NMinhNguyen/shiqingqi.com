@@ -8,13 +8,10 @@ import texts from './texts';
 
 Vue.config.productionTip = false;
 
-Vue.use(T(texts, store.state.lang));
-
-// Register service worker
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        runtime.register();
-    });
+Vue.mixin({
+  created() {
+    const vue = /** @type {Vue} */ (this);
+    if (vue.$options.vars) vue.$vars = vue.$options.vars();
 }
 
 // Handle language switch

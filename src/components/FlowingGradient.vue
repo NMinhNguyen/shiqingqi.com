@@ -17,16 +17,6 @@ import {
   fillCells
 } from "@/utils/canvas";
 
-// Non-reactive variables
-/** @type {SimplexNoise} */
-const noise = new SimplexNoise();
-/** @type {import("@/utils/canvas").LowResCanvas} */
-let lowResCanvas;
-/** @type {number} */
-let loopTimer;
-/** @type {number} */
-let t;
-
 export default {
   props: {
     top: { type: String, default: "#0F2027" },
@@ -35,32 +25,40 @@ export default {
     speed: { type: Number, default: 1 },
     offset: { type: Number, default: 0 }
   },
+  vars: () => ({
+    noise: new SimplexNoise(),
+    /** @type {import("@/utils/canvas").LowResCanvas} */
+    lowResCanvas: null,
+    loopTimer: 0,
+    t: 0
+  }),
   mounted() {
     const canvas = /** @type {HTMLCanvasElement} */ (this.$refs.canvas);
 
-    t = 0;
-    lowResCanvas = createLowResCanvas({ canvas, gridWidth: 30 });
-    resize(lowResCanvas);
+    this.$vars.t = 0;
+    this.$vars.lowResCanvas = createLowResCanvas({ canvas, gridWidth: 30 });
+    resize(this.$vars.lowResCanvas);
 
     window.addEventListener("resize", this.handleResize);
 
-    loopTimer = window.setInterval(this.loop, 33);
+    this.$vars.loopTimer = window.setInterval(this.loop, 33);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.handleResize);
-    clearInterval(loopTimer);
+    clearInterval(this.$vars.loopTimer);
   },
   methods: {
     handleResize: debounce(300, function() {
-      resize(lowResCanvas);
+      resize(this.$vars.lowResCanvas);
     }),
     loop() {
       this.draw();
 
-      t += this.speed / (0.5 * Math.max(window.innerHeight, window.innerWidth));
+      this.$vars.t +=
+        this.speed / (0.5 * Math.max(window.innerHeight, window.innerWidth));
     },
     draw() {
-      fillLinearGradient(lowResCanvas, {
+      fillLinearGradient(this.$vars.lowResCanvas, {
         direction: "TOP_TO_BOTTOM",
         colors: [
           { offset: 0, color: this.top },
@@ -70,16 +68,24 @@ export default {
 
       const { r, g, b } = hex2rgb(this.cover);
       const pageHeight =
-        document.documentElement.scrollHeight - lowResCanvas.canvas.height;
-      const yOffset = this.offset * (pageHeight / lowResCanvas.gridWidth);
+        document.documentElement.scrollHeight -
+        this.$vars.lowResCanvas.canvas.height;
+      const yOffset =
+        this.offset * (pageHeight / this.$vars.lowResCanvas.gridWidth);
 
       const ratio = Math.max(
-        lowResCanvas.gridResolution.x,
-        lowResCanvas.gridResolution.y
+        this.$vars.lowResCanvas.gridResolution.x,
+        this.$vars.lowResCanvas.gridResolution.y
       );
-      fillCells(lowResCanvas, (x, y) => {
+      fillCells(this.$vars.lowResCanvas, (x, y) => {
         const a = ease.inCubic(
-          noise.noise3D(x / ratio, (y + yOffset) / ratio, t) * 0.5 + 0.5
+          this.$vars.noise.noise3D(
+            x / ratio,
+            (y + yOffset) / ratio,
+            this.$vars.t
+          ) *
+            0.5 +
+            0.5
         );
         return { r, g, b, a };
       });
