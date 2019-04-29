@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "commit": "commit",
+    "commit": "npx git-cz",
     "release": "standard-version"
   },
   "dependencies": {
@@ -30,6 +30,8 @@
     "babel-core": "^7.0.0-0",
     "babel-jest": "^23.6.0",
     "canvas": "^2.4.1",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
     "husky": "^2.3.0",
@@ -51,6 +53,11 @@
       "pre-commit": "npm run lint",
       "pre-push": "npm run build && npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
