@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheHeader renders the header 1`] = `
+<div class="the-header">
+  <div class="the-header__logo">
+    <logo-stub color="#ffffff"></logo-stub>
+  </div>
+  <div class="the-header__title">
+    <h2></h2>
+    <h1></h1>
+  </div>
+</div>
+`;
