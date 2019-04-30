@@ -12,5 +12,5 @@
     "resolveJsonModule": true,
     "target": "es5"
   },
-  "exclude": ["node_modules", "dist", "tests"]
+  "exclude": ["node_modules", "dist"]
 }
