@@ -1,25 +1,13 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
+import i18n from "@/stores/i18n";
+import theme from "@/stores/theme";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state: {
-        lang: 'en',
-        hreflang: 'en-GB'
-    },
-    mutations: {
-        setLang(state, newLang) {
-            state.lang = newLang;
-
-            switch (newLang) {
-                case 'zh':
-                    state.hreflang = 'zh-Hans';
-                    break;
-                default:
-                    state.hreflang = 'en';
-            }
-        }
-    },
-    actions: {}
+  modules: {
+    i18n,
+    theme
+  }
 });

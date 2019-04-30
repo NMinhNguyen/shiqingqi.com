@@ -29,8 +29,9 @@ export const mutations = {
 
 export const actions = {
   /**
-   * @param {import('vuex').Store<typeof state>} context
+   * @param {import("vuex").ActionContext<typeof state, {}>} context
    * @param {string} lang Language code.
+   * @returns {Promise}
    */
   async fetchTranslations({ commit }, lang) {
     /** @type {{default: object}} */
