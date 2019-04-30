@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { shallowMount, config } from "@vue/test-utils";
 import ScrollScene from "@/components/ScrollScene.vue";
 

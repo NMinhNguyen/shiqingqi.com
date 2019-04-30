@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { shallowMount, config } from "@vue/test-utils";
 import FlowingGradient from "@/components/FlowingGradient.vue";
 import * as canvas from "@/utils/canvas";

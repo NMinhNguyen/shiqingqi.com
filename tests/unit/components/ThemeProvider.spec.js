@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { shallowMount } from "@vue/test-utils";
 import ThemeProvider from "@/components/ThemeProvider.vue";
 
@@ -6,7 +7,6 @@ jest.mock("@/utils/color", () => ({
   hex2rgb: jest.fn(() => ({ r: 1, g: 2, b: 3 }))
 }));
 
-/** @type {{state: {[module:string]: any}}} */
 const stubStore = {
   state: {
     theme: {
@@ -19,7 +19,6 @@ const stubStore = {
 };
 
 describe("ThemeProvider.vue", () => {
-  /** @type {jest.Mock<any, any>} */
   let setProperty;
 
   beforeEach(() => {
