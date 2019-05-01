@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheBackground renders the background 1`] = `
+<div class="the-background">
+  <div class="the-background__clip">
+    <flowing-gradient-stub top="#0F2027" bottom="#240b36" cover="#c31432" speed="1" offset="0" class="the-background__gradient"></flowing-gradient-stub>
+  </div>
+</div>
+`;
