@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollIndicator renders arrows 1`] = `
+<div class="scroll-indicator">
+  <div class="scroll-indicator__arrow"></div>
+</div>
+`;
