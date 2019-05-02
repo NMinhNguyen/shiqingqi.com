@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheSummary renders paragraphs 1`] = `
+<div class="the-summary">
+  <p class="the-summary__i-believe">
+
+  </p>
+  <p class="the-summary__craftsman">
+
+  </p>
+</div>
+`;

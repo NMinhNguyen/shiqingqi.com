@@ -90,7 +90,10 @@ $animate-bob: var(--the-background-animate-bob);
     transform: translateY(
       calc(10vh * (1 - #{$animate-expand}) + 5vh * #{$animate-bob})
     );
-    filter: blur(calc((1 - #{$animate-expand}) * 0.2rem));
+
+    @media only screen and (orientation: landscape) {
+      transform: translateY(calc(5vh * #{$animate-bob}));
+    }
   }
 
   &__gradient {
