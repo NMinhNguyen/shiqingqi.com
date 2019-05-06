@@ -19,8 +19,8 @@ export default {
     /** @type {() => {[property: string]: number}} */
     summaryStyle() {
       return {
-        "--the-header-animate-line-1": this.animateLineOne,
-        "--the-header-animate-line-2": this.animateLineTwo
+        "--the-summary-animate-line-1": this.animateLineOne,
+        "--the-summary-animate-line-2": this.animateLineTwo
       };
     }
   }
@@ -33,7 +33,7 @@ export default {
   padding: 30vh 3rem;
 
   &__i-believe {
-    $animate: var(--the-header-animate-line-1);
+    $animate: var(--the-summary-animate-line-1);
     transform: translateY(calc((1 - #{$animate}) * 20vh));
     opacity: $animate;
     font-family: $font-heading;
@@ -41,7 +41,7 @@ export default {
   }
 
   &__craftsman {
-    $animate: var(--the-header-animate-line-2);
+    $animate: var(--the-summary-animate-line-2);
     transform: translateY(calc((1 - #{$animate}) * 15vh));
     opacity: $animate;
     font-size: 1.3rem;
