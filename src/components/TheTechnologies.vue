@@ -41,7 +41,7 @@ export default {
 .the-technologies {
   display: flex;
   padding: 30vh 2rem 2rem;
-  height: 100%;
+  min-height: 100%;
   font-size: 2rem;
 
   &__write {
@@ -55,11 +55,11 @@ export default {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
     justify-content: space-between;
     font-family: $font-heading;
     position: relative;
-    transform: translateY(calc(#{$animate} * (-70vh + 4rem + 5px)));
+    transform: translateY(calc(#{$animate} * (-100% + 2rem + 3px)));
 
     span {
       $n: var(--the-technologies-count);
