@@ -57,8 +57,8 @@ describe("i18n", () => {
       };
       const get = getters.getText(state);
 
-      it("returns empty string if key doesn't exist", () => {
-        expect(get("blah")).toEqual("");
+      it("returns ??key?? if key doesn't exist", () => {
+        expect(get("blah")).toEqual("??blah??");
       });
 
       it("returns translation without param", () => {
