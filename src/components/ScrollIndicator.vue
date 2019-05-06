@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div class="scroll-indicator">
     <div class="scroll-indicator__arrow"></div>
   </div>
