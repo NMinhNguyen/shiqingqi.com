@@ -44,8 +44,12 @@ describe("ScrollScene", () => {
   });
 
   describe("mounted", () => {
+    let handleScroll, handleResize;
+
     beforeAll(() => {
       jest.clearAllMocks();
+      handleScroll = jest.spyOn(ScrollScene.methods, "handleScroll");
+      handleResize = jest.spyOn(ScrollScene.methods, "handleResize");
       wrapper = shallowMount(ScrollScene);
     });
 
@@ -60,6 +64,11 @@ describe("ScrollScene", () => {
           expect.any(Function)
         );
       });
+    });
+
+    it("calls handleScroll and handleResize", () => {
+      expect(handleScroll).toHaveBeenCalled();
+      expect(handleResize).toHaveBeenCalled();
     });
   });
 
@@ -89,13 +98,16 @@ describe("ScrollScene", () => {
     let slotProps;
 
     beforeAll(async () => {
+      jest.clearAllMocks();
       scrollMock = await import("@/utils/scroll");
       wrapper = shallowMount(ScrollScene, {
         scopedSlots: { default: props => (slotProps = props) }
       });
     });
 
-    it("doesn't call resize callback without intersecting", () => {
+    it("doesn't call scroll callback without intersecting", () => {
+      jest.clearAllMocks();
+      windowEventListeners.scroll();
       expect(scrollMock.calcProgress).not.toHaveBeenCalled();
     });
 

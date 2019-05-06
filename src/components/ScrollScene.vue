@@ -28,11 +28,17 @@ export default {
     /** @returns {(options?: {easing?: string, range?: number[]}) => number} */
     getAnimate() {
       return createAnimation(this.progress);
+    },
+    /** @returns {() => void} */
+    debouncedResizeHandler() {
+      return debounce(300, this.handleResize);
     }
   },
   mounted() {
     this.handleResize();
+    this.intersecting = true;
     this.handleScroll();
+    this.intersecting = false;
     this.observe();
   },
   beforeDestroy() {
@@ -43,14 +49,14 @@ export default {
       this.$vars.observer = new IntersectionObserver(this.handleIntersect);
       this.$vars.observer.observe(/** @type {Element} */ (this.$refs.scene));
 
-      window.addEventListener("resize", this.handleResize);
+      window.addEventListener("resize", this.debouncedResizeHandler);
       window.addEventListener("scroll", this.handleScroll);
     },
     unobserve() {
       this.$vars.observer && this.$vars.observer.disconnect();
       this.$vars.observer = null;
 
-      window.removeEventListener("resize", this.handleResize);
+      window.removeEventListener("resize", this.debouncedResizeHandler);
       window.removeEventListener("scroll", this.handleScroll);
     },
     /** @param {IntersectionObserverEntry[]} entries */
@@ -67,14 +73,14 @@ export default {
         innerHeight: this.$vars.innerHeight
       });
     },
-    handleResize: debounce(300, function() {
+    handleResize() {
       const scene = /** @type {HTMLElement} */ (this.$refs.scene);
       const inner = /** @type {HTMLElement} */ (this.$refs.inner);
 
       this.$vars.offset = scene.offsetTop;
       this.$vars.height = scene.getBoundingClientRect().height;
       this.$vars.innerHeight = inner.getBoundingClientRect().height;
-    })
+    }
   }
 };
 </script>
