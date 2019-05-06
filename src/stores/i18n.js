@@ -49,7 +49,7 @@ export const getters = {
     const translations = state.translations[state.locale];
 
     // Return empty string if translation doesn't exist
-    if (!translations || !translations[key]) return "";
+    if (!translations || !translations[key]) return `??${key}??`;
 
     // Return translation if no params provided
     if (!params) return translations[key];

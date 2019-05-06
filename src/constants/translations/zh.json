@@ -1,7 +1,9 @@
 {
-  "RESUME": "简历",
+  "RESUME": "履历",
   "SITE_NAME": "石清琪",
   "GREETING": "你好。",
   "SUMMARY_LINE_1": "我信奉工匠精神",
-  "SUMMARY_LINE_2": "工匠们追求完美、精益求精、执着专注。"
+  "SUMMARY_LINE_2": "工匠们追求完美、精益求精、执着专注。",
+  "I_WRITE": "我擅长",
+  "AND_MORE": "还有很多！"
 }

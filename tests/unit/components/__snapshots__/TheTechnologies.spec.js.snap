@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheTechnologies default list of technologies 1`] = `
+<div class="the-technologies"><span class="the-technologies__write">
+
+  </span>
+  <div class="the-technologies__list"><span>
+      JavaScript
+    </span><span>
+      CSS
+    </span><span>
+      HTML
+    </span></div>
+</div>
+`;
+
+exports[`TheTechnologies renders list of technologies 1`] = `
+<div class="the-technologies"><span class="the-technologies__write">
+
+  </span>
+  <div class="the-technologies__list"><span>
+      testA
+    </span><span>
+      testB
+    </span></div>
+</div>
+`;
